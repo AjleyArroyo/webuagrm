@@ -10,7 +10,31 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require jquery.turbolinks
+//= require jquery-3.1.1.min.js
+//= require jquery-ui.min.js
+//= require bootstrap.min.js
+//= require material.min.js
+//= require perfect-scrollbar.jquery.min.js
+//= require jquery.validate.min.js
+//= require moment.min.js
+//= require jquery.bootstrap-wizard.js
+//= require bootstrap-notify.js
+//= require bootstrap-datetimepicker.js
+//= require jquery-jvectormap.js
+//= require nouislider.min.js
+//= require jquery.dropdown.js
+//= require jquery.datatables.js
+//= require sweetalert2.js
+//= require jquery.tagsinput.js
+//= require fullcalendar.min.js
+//= require material-dashboard.js
+
+
+//= require demo.js
+//= require cable.js
+
+
