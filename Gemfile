@@ -27,6 +27,47 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#for authentication
+gem 'devise', '4.2.0'
+gem 'cancancan','1.15.0'
+gem 'rolify', '5.1.0'
+#for facebook authentication
+gem 'omniauth-facebook', '4.0.0'
+#for google authentication
+gem 'omniauth-google-oauth2'
+
+#for database
+gem 'mysql2'
+
+#for templating engine for HTML
+gem 'haml','~> 4.0.5'
+
+
+#for logs
+gem "audited", "~> 4.3"
+gem "rails-observers", github: 'rails/rails-observers'
+
+#for city and countrys
+gem 'city-state', '~> 0.0.13'
+#use tags
+gem 'acts-as-taggable-on', '~> 4.0'
+
+
+
+#show youtube video
+gem 'youtube_it'
+
+#for images
+gem "paperclip", "~> 5.0.0"
+
+
+
+#for encrypt
+gem 'bcrypt-ruby', :require => 'bcrypt'
+
+#This is for fixing gem turbolinks alone
+gem 'jquery-turbolinks'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
