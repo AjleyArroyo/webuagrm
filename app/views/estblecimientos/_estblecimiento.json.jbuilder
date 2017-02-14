@@ -1,0 +1,2 @@
+json.extract! estblecimiento, :id, :nombre, :numeracion, :alias, :informacion, :latitud, :longitud, :imagen, :idcategoria, :created_at, :updated_at
+json.url estblecimiento_url(estblecimiento, format: :json)

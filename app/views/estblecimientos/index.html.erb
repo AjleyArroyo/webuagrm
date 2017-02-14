@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Estblecimientos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Numeracion</th>
+      <th>Alias</th>
+      <th>Informacion</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Imagen</th>
+      <th>Idcategoria</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estblecimientos.each do |estblecimiento| %>
+      <tr>
+        <td><%= estblecimiento.nombre %></td>
+        <td><%= estblecimiento.numeracion %></td>
+        <td><%= estblecimiento.alias %></td>
+        <td><%= estblecimiento.informacion %></td>
+        <td><%= estblecimiento.latitud %></td>
+        <td><%= estblecimiento.longitud %></td>
+        <td><%= estblecimiento.imagen %></td>
+        <td><%= estblecimiento.idcategoria %></td>
+        <td><%= link_to 'Show', estblecimiento %></td>
+        <td><%= link_to 'Edit', edit_estblecimiento_path(estblecimiento) %></td>
+        <td><%= link_to 'Destroy', estblecimiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estblecimiento', new_estblecimiento_path %>

@@ -1,0 +1,2 @@
+json.extract! establecimiento, :id, :nombre, :numeracion, :alias, :informacion, :latitud, :longitud, :imagen, :idcategoria, :created_at, :updated_at
+json.url establecimiento_url(establecimiento, format: :json)

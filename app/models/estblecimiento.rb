@@ -1,0 +1,2 @@
+class Estblecimiento < ApplicationRecord
+end
