@@ -1,0 +1,52 @@
+.wrapper.wrapper-full-page
+  .full-page.login-page{"data-image" => "../../assets/img/login.jpeg", "filter-color" => "black"}
+    / you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose "
+    .content
+      .container
+        .row
+          .col-md-4.col-sm-6.col-md-offset-4.col-sm-offset-3
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .card.card-login.card-hidden
+                .card-header.text-center{"data-background-color" => "rose"}
+                  %h4.card-title Login
+                  .social-line
+                    %a.btn.btn-just-icon.btn-simple{:href => "#btn"}
+                      %i.fa.fa-facebook-square
+                    %a.btn.btn-just-icon.btn-simple{:href => "#pablo"}
+                      %i.fa.fa-twitter
+                    %a.btn.btn-just-icon.btn-simple{:href => "#eugen"}
+                      %i.fa.fa-google-plus
+                %p.category.text-center
+                  Or Be Classical
+                .card-content
+                  .input-group
+                    %span.input-group-addon
+                      %i.material-icons email
+                    .form-group.label-floating
+                      %label.control-label Email address
+                      = f.email_field :email, autofocus: true, class: "form-control"
+                  .input-group
+                    %span.input-group-addon
+                      %i.material-icons lock_outline
+                    .form-group.label-floating
+                      %label.control-label Password
+                      = f.password_field :password, autocomplete: "off", class: "form-control"
+                .footer.text-center
+                  = f.submit "Iniciar Sesion", class: "btn btn-rose btn-simple btn-wd btn-lg"
+    %footer.footer
+      .container
+        %nav.pull-left
+          %ul
+            %li
+              %a{:href => "#"}
+                Home
+            %li
+              %a{:href => "#"}
+                Company
+            %li
+              %a{:href => "#"}
+                Portfolio
+            %li
+              %a{:href => "#"}
+                Blog
+
