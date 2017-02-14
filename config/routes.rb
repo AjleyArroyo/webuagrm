@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :eventos
   resources :establecimientos
   resources :estblecimientos
   resources :categoria
