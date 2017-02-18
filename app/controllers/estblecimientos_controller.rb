@@ -1,4 +1,5 @@
 class EstblecimientosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_estblecimiento, only: [:show, :edit, :update, :destroy]
 
   # GET /estblecimientos

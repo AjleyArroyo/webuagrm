@@ -2,157 +2,26 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Webuagrm
+    %title .:: UAGRM AR ::.
     = csrf_meta_tags
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", :name => "viewport"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
 
-    %link{:href => "http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css", :rel => "stylesheet"}/
-    %link{:href => "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons", :rel => "stylesheet", :type => "text/css"}/
-
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    - if user_signed_in?
-      .wrapper
-        .sidebar{"data-active-color" => "rose", "data-background-color" => "black", "data-image" => "../assets/img/sidebar-1.jpg"}
 
-          .logo
-            %a.simple-text{:href => "http://www.creative-tim.com"}
-              UAGRM AR
-          .logo.logo-mini
-            %a.simple-text{:href => "http://www.creative-tim.com"}
-              AR
-          .sidebar-wrapper
-            .user
-              .photo
-                %img{:src => "../assets/img/faces/avatar.jpg"}/
-              .info
-                %a.collapsed{"data-toggle" => "collapse", :href => "#collapseExample"}
-                  Tania Andrew
-                  %b.caret
-                #collapseExample.collapse
-                  %ul.nav
-                    %li
-                      %a{:href => "#"} My Perfil
-                    %li
-                      %a{:href => "#"} Editar Perfil
-                    %li
-                      %a{:href => "#{destroy_user_session_path}", :method => :delete} Salir
-            %ul.nav
-              %li.active
-                %a{:href => "#{home_index_path}"}
-                  %i.material-icons dashboard
-                  %p Dashboard
-              %li
-                %a{:href => ""}
-                  %i.material-icons apps
-                  %p
-                    Gestionar Usuarios
-              %li
-                %a{:href => "#{categoria_path}"}
-                  %i.material-icons content_paste
-                  %p
-                    Gestionar Categorias
-              %li
-                %a{:href => "#{establecimientos_path}"}
-                  %i.material-icons grid_on
-                  %p
-                    Gestionar Establecimientos
-              %li
-                %a{:href => "#{eventos_path}"}
-                  %i.material-icons place
-                  %p
-                    Gestionar Eventos
-        .main-panel
-          %nav.navbar.navbar-transparent.navbar-absolute
-            .container-fluid
-              .navbar-minimize
-                %button#minimizeSidebar.btn.btn-round.btn-white.btn-fill.btn-just-icon
-                  %i.material-icons.visible-on-sidebar-regular more_vert
-                  %i.material-icons.visible-on-sidebar-mini view_list
-              .navbar-header
-                %button.navbar-toggle{"data-toggle" => "collapse", :type => "button"}
-                  %span.sr-only Toggle navigation
-                  %span.icon-bar
-                  %span.icon-bar
-                  %span.icon-bar
-                %a.navbar-brand{:href => "#"} Dashboard
-              .collapse.navbar-collapse
-                %ul.nav.navbar-nav.navbar-right
-                  %li
-                    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#pablo"}
-                      %i.material-icons dashboard
-                      %p.hidden-lg.hidden-md Dashboard
-                  %li.dropdown
-                    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                      %i.material-icons notifications
-                      %span.notification 5
-                      %p.hidden-lg.hidden-md
-                        Notifications
-                        %b.caret
-                    %ul.dropdown-menu
-                      %li
-                        %a{:href => "#"} Mike John responded to your email
-                      %li
-                        %a{:href => "#"} You have 5 new tasks
-                      %li
-                        %a{:href => "#"} You're now friend with Andrew
-                      %li
-                        %a{:href => "#"} Another Notification
-                      %li
-                        %a{:href => "#"} Another One
-                  %li
-                    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#pablo"}
-                      %i.material-icons person
-                      %p.hidden-lg.hidden-md Profile
-                  %li.separator.hidden-lg.hidden-md
-                %form.navbar-form.navbar-right{:role => "search"}
-                  .form-group.form-search.is-empty
-                    %input.form-control{:placeholder => "Search", :type => "text"}/
-                    %span.material-input
-                  %button.btn.btn-white.btn-round.btn-just-icon{:type => "submit"}
-                    %i.material-icons search
-                    .ripple-container
-          = yield
-
-    -else
-      %nav.navbar.navbar-primary.navbar-transparent.navbar-absolute
-        .container
-          .navbar-header
-            %button.navbar-toggle{"data-target" => "#navigation-example-2", "data-toggle" => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            %a.navbar-brand{:href => " ../dashboard.html "} Material Dashboard Pro
-          .collapse.navbar-collapse
-            %ul.nav.navbar-nav.navbar-right
-              %li
-                %a{:href => "../dashboard.html"}
-                  %i.material-icons dashboard
-                  Dashboard
-              %li
-                %a{:href => "#{new_registration_path(:user)}"}
-                  %i.material-icons person_add
-                  Register
-              %li.active
-                %a{:href => "#{new_session_path(:user)}"}
-                  %i.material-icons fingerprint
-                  Login
-              %li
-                %a{:href => "lock.html"}
-                  %i.material-icons lock_open
-                  Lock
+  -if !user_signed_in?
+    %body.gray-bg
       = yield
+  -else
+    %body.md-skin
+      #wrapper
+        = render 'layouts/sidebar'
+        #page-wrapper.gray-bg.dashoard-1
+          = render 'layouts/menu_header'
+          .wrapper.wrapper-content.animated.fadeInRight
+            = yield
+          = render "layouts/footer"
+          = render "layouts/sidebar_right"
 
-  :javascript
-    $().ready(function(){
-      demo.checkFullPageBackgroundImage();
-
-      setTimeout(function(){
-          // after 1000 ms we add the class animated to the login/register card
-          $('.card').removeClass('card-hidden');
-      }, 700)
-    });

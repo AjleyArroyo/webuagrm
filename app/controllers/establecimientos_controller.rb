@@ -1,4 +1,5 @@
 class EstablecimientosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_establecimiento, only: [:show, :edit, :update, :destroy]
 
   # GET /establecimientos

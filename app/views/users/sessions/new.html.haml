@@ -1,52 +1,22 @@
-.wrapper.wrapper-full-page
-  .full-page.login-page{"data-image" => "../../assets/img/login.jpeg", "filter-color" => "black"}
-    / you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose "
-    .content
-      .container
-        .row
-          .col-md-4.col-sm-6.col-md-offset-4.col-sm-offset-3
-            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-              .card.card-login.card-hidden
-                .card-header.text-center{"data-background-color" => "rose"}
-                  %h4.card-title Login
-                  .social-line
-                    %a.btn.btn-just-icon.btn-simple{:href => "#btn"}
-                      %i.fa.fa-facebook-square
-                    %a.btn.btn-just-icon.btn-simple{:href => "#pablo"}
-                      %i.fa.fa-twitter
-                    %a.btn.btn-just-icon.btn-simple{:href => "#eugen"}
-                      %i.fa.fa-google-plus
-                %p.category.text-center
-                  Or Be Classical
-                .card-content
-                  .input-group
-                    %span.input-group-addon
-                      %i.material-icons email
-                    .form-group.label-floating
-                      %label.control-label Email address
-                      = f.email_field :email, autofocus: true, class: "form-control"
-                  .input-group
-                    %span.input-group-addon
-                      %i.material-icons lock_outline
-                    .form-group.label-floating
-                      %label.control-label Password
-                      = f.password_field :password, autocomplete: "off", class: "form-control"
-                .footer.text-center
-                  = f.submit "Iniciar Sesion", class: "btn btn-rose btn-simple btn-wd btn-lg"
-    %footer.footer
-      .container
-        %nav.pull-left
-          %ul
-            %li
-              %a{:href => "#"}
-                Home
-            %li
-              %a{:href => "#"}
-                Company
-            %li
-              %a{:href => "#"}
-                Portfolio
-            %li
-              %a{:href => "#"}
-                Blog
-
+.middle-box.text-center.loginscreen.animated.fadeInDown
+  %div
+    %div
+      %h1.logo-name IN+
+    %h3 Welcome to IN+
+    %p
+      Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+      / Continually expanded and constantly improved Inspinia Admin Them (IN+)
+    %p Login in. To see it in action.
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-group
+        = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email"
+      .form-group
+        = f.password_field :password, autocomplete: "off", class: "form-control", required: true, placeholder: "Password"
+      = f.submit "Iniciar Sesion", class: "btn btn-primary block full-width m-b"
+      %a{:href => "#"}
+        %small Olivadaste tu contraseña?
+      %p.text-muted.text-center
+        %small No tienes una cuenta?
+      %a.btn.btn-sm.btn-white.btn-block{:href => "#{new_registration_path(resource_name)}"} Crear Cuenta
+    %p.m-t
+      %small UAGRM AR WEB © 2017
