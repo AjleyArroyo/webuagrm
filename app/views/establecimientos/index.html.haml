@@ -1,0 +1,59 @@
+.row.not-margin
+  .col-lg-12.wrapper.border-bottom.white-bg.page-heading
+    %h2 Categorias
+    %ol.breadcrumb
+      %li
+        %a{:href => "#{root_path}"} Inicio
+      %li.active
+        %strong Gestionar Establecimiento
+
+.row
+  .col-lg-12
+    .ibox.float-e-margins
+      .ibox-title
+        %h5 Lista de Establecimientos
+        .ibox-tools
+          %a.collapse-link
+            %i.fa.fa-chevron-up
+      .ibox-content
+        %div
+          %span.input-group-btn
+            %a.btn.btn-sm.btn-primary{:href => "#{new_establecimiento_path}"} Crear
+        %table.table.table-hover
+          %thead
+            %tr
+              %th #
+              %th Nombre
+              %th Numeración
+              %th Alias
+              %th Información
+              %th Latitud
+              %th Longitud
+              %th Imagen
+              %th Categoría
+              %th Acción
+          %tbody
+            - i=1;
+            - @establecimientos.each do |establecimiento|
+              %tr
+                %td= i
+                %td= establecimiento.nombre
+                %td= establecimiento.numeracion
+                %td= establecimiento.alias
+                %td= establecimiento.informacion
+                %td= establecimiento.latitud
+                %td= establecimiento.longitud
+                %td= establecimiento.imagen
+                %td= establecimiento.idcategoria
+
+                %td
+                  = link_to establecimiento do
+                    %i.fa.fa-eye.text-navy
+                  %a{:href => "#{edit_establecimiento_path(establecimiento)}"}
+                    %i.fa.fa-edit.text-navy
+                  = link_to establecimiento, method: :delete, data: { confirm: 'Are you sure?' } do
+                    %i.fa.fa-trash.text-navy
+                - i=i+1
+
+
+

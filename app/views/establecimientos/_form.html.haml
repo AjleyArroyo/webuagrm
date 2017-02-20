@@ -1,0 +1,31 @@
+.col-lg-4.col-lg-offset-4
+  .panel.panel-primary
+    .panel-heading
+      Primary Panel
+    .panel-body
+      = form_for(establecimiento) do |f|
+        .form-group
+          %label Nombre
+          = f.text_field :nombre, class: "form-control", placeholder: "Introduzca el nombre"
+        .form-group
+          %label Numeración
+          = f.text_field :numeracion, class: "form-control", placeholder: "Introduzca la numeración"
+        .form-group
+          %label Alias
+          = f.text_field :alias, class: "form-control", placeholder: "Introduzca el alias"
+        .form-group
+          %label Información
+          = f.text_field :informacion, class: "form-control", placeholder: "Introduzca la informacion"
+        .form-group
+          %label Latitud
+          = f.text_field :latitud, class: "form-control", placeholder: "Introduzca la latitud"
+          .form-group
+          %label Longitud
+          = f.text_field :longitud, class: "form-control", placeholder: "Introduzca la longitud"
+          %label Imagen
+          = f.text_field :imagen, class: "form-control", placeholder: "Introduzca la imagen"
+        %div
+          = link_to establecimientos_path do
+            %i.fa.fa-arrow-left.text-navy Volver
+          = f.submit "Guardar", class: "btn btn-sm btn-primary pull-right m-t-n-xs"
+

@@ -1,1 +1,0 @@
-json.partial! "estblecimientos/estblecimiento", estblecimiento: @estblecimiento

@@ -1,1 +1,0 @@
-json.array! @estblecimientos, partial: 'estblecimientos/estblecimiento', as: :estblecimiento

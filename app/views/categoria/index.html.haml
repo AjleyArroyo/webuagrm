@@ -1,0 +1,44 @@
+.row.not-margin
+  .col-lg-12.wrapper.border-bottom.white-bg.page-heading
+    %h2 Categorias
+    %ol.breadcrumb
+      %li
+        %a{:href => "#{root_path}"} Inicio
+      %li.active
+        %strong Gestionar Categoria
+
+.row
+  .col-lg-12
+    .ibox.float-e-margins
+      .ibox-title
+        %h5 Lista de Categorias
+        .ibox-tools
+          %a.collapse-link
+            %i.fa.fa-chevron-up
+      .ibox-content
+        %div
+          %span.input-group-btn
+            %a.btn.btn-sm.btn-primary{:href => "#{new_categorium_path}"} Crear
+        %table.table.table-hover
+          %thead
+            %tr
+              %th #
+              %th Nombre
+              %th Descripción
+              %th Acción
+          %tbody
+            - i=1;
+            - @categoria.each do |categorium|
+              %tr
+                %td= i
+                %td= categorium.nombre
+                %td= categorium.descripcion
+                %td
+                  = link_to categorium do
+                    %i.fa.fa-eye.text-navy
+                  %a{:href => "#{edit_categorium_path(categorium)}"}
+                    %i.fa.fa-edit.text-navy
+                  = link_to categorium, method: :delete, data: { confirm: 'Are you sure?' } do
+                    %i.fa.fa-trash.text-navy
+                - i=i+1
+

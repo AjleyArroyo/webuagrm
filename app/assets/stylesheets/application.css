@@ -17,6 +17,7 @@
  *= require gritter/jquery.gritter
  *= require animate
  *= require style
+ *= require my_stile
 
 
  *= require_self

@@ -1,0 +1,8 @@
+.not-margin{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 25px;
+}
+.boxshadow-none{
+    box-shadow: none !important;
+}
