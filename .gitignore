@@ -40,7 +40,6 @@ db/*.sqlite3
 /doc/specs.html
 /public/cache
 /public/stylesheets/compiled
-/public/system/*
 /spec/tmp/*
 /cache
 /capybara*
@@ -86,4 +85,3 @@ pickle-email-*.html
 
 # Ignore Byebug command history file.
 .byebug_history
-
