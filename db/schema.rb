@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170228015630) do
     t.float    "latitud",             limit: 24
     t.float    "longitud",            limit: 24
     t.string   "imagen"
-    t.integer  "categorium_id"
+    t.integer  "categoria_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "avatar_file_name"
