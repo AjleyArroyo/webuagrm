@@ -31,13 +31,14 @@
 </p>
 
 <p>
-  <strong>Imagen:</strong>
-  <%= @establecimiento.imagen %>
+
+  <img width="90%" src="<%= @establecimiento.avatar %>">
+
 </p>
 
 <p>
   <strong>Idcategoria:</strong>
-  <%= @establecimiento.idcategoria %>
+  <%= @establecimiento.categorium.nombre %>
 </p>
 
 <%= link_to 'Edit', edit_establecimiento_path(@establecimiento) %> |

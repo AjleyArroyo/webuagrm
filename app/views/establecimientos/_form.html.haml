@@ -1,31 +1,60 @@
-.col-lg-4.col-lg-offset-4
-  .panel.panel-primary
-    .panel-heading
-      Primary Panel
-    .panel-body
-      = form_for(establecimiento) do |f|
-        .form-group
-          %label Nombre
-          = f.text_field :nombre, class: "form-control", placeholder: "Introduzca el nombre"
-        .form-group
-          %label Numeración
-          = f.text_field :numeracion, class: "form-control", placeholder: "Introduzca la numeración"
-        .form-group
-          %label Alias
-          = f.text_field :alias, class: "form-control", placeholder: "Introduzca el alias"
-        .form-group
-          %label Información
-          = f.text_field :informacion, class: "form-control", placeholder: "Introduzca la informacion"
-        .form-group
-          %label Latitud
-          = f.text_field :latitud, class: "form-control", placeholder: "Introduzca la latitud"
-          .form-group
-          %label Longitud
-          = f.text_field :longitud, class: "form-control", placeholder: "Introduzca la longitud"
-          %label Imagen
-          = f.text_field :imagen, class: "form-control", placeholder: "Introduzca la imagen"
-        %div
-          = link_to establecimientos_path do
-            %i.fa.fa-arrow-left.text-navy Volver
-          = f.submit "Guardar", class: "btn btn-sm btn-primary pull-right m-t-n-xs"
+.row
+  .col-lg-12
+    .panel.panel-primary
+      .panel-heading
+        Primary Panel
+      .panel-body
+        = form_for establecimiento,  html: { multipart: true } do |f|
+          .col-md-4
+            %label.control-label Imagen
+            = f.file_field :avatar, class: "file-loading"
+          .col-md-8
+            .form-group.col-md-6
+              %label Nombre
+              = f.text_field :nombre, class: "form-control", placeholder: "Introduzca el nombre"
+            .form-group.col-md-3
+              %label Numeración
+              = f.text_field :numeracion, class: "form-control", placeholder: "Introduzca la numeración"
+            .form-group.col-md-3
+              %label Alias
+              = f.text_field :alias, class: "form-control", placeholder: "Introduzca el alias"
+            .form-group.col-md-6
+              %label Información
+              = f.text_field :informacion, class: "form-control", placeholder: "Introduzca la informacion"
+            .form-group.col-md-3
+              %label Latitud
+              = f.text_field :latitud, class: "form-control", placeholder: "Introduzca la latitud"
+            .form-group.col-md-3
+              %label Longitud
+              = f.text_field :longitud, class: "form-control", placeholder: "Introduzca la longitud"
 
+            .form-group.col-md-6
+              = f.label "Categoría", class: "control-label"
+              = f.select :categorium_id,
+                               options_from_collection_for_select(Categorium.all, :id, :nombre, :categorium_id),
+                               {},
+                               {:class => "form-control contract-customer-holder select2",:id => "select_all_signers",:prompt => "Seleccione una categoría"}
+
+
+          %div
+            = link_to establecimientos_path do
+              %i.fa.fa-arrow-left.text-navy Volver
+            = f.submit "Guardar", class: "btn btn-sm btn-primary pull-right m-t-n-xs"
+
+:javascript
+  $(document).on('ready', function() {
+    $("#establecimiento_avatar").fileinput({
+      showUpload: true,
+      layoutTemplates: {
+        main1: "{preview}\n" +
+        "<div class=\'input-group {class}\'>\n" +
+        "   <div class=\'input-group-btn\'>\n" +
+        "       {browse}\n" +
+        "       {upload}\n" +
+        "       {remove}\n" +
+        "   </div>\n" +
+        "   {caption}\n" +
+        "</div>"
+      }
+    });
+  });

@@ -1,17 +1,17 @@
-.col-lg-4.col-lg-offset-4
-  .panel.panel-primary
-    .panel-heading
-      Primary Panel
-    .panel-body
-      = form_for(categorium) do |f|
-        .form-group
-          %label Nombre
-          = f.text_field :descripcion, class: "form-control", placeholder: "Introduzca el nombre"
-        .form-group
-          %label Descripción
-          = f.text_field :nombre, class: "form-control", placeholder: "Introduzca la descripcion"
-        %div
-          = link_to categoria_path do
-            %i.fa.fa-arrow-left.text-navy Volver
-          = f.submit "Guardar", class: "btn btn-sm btn-primary pull-right m-t-n-xs"
-
+#modal-form.modal.fade{"aria-hidden" => "true"}
+  .modal-dialog
+    .modal-content{:style=>"border:none"}
+      .panel.panel-primary
+        .panel-heading
+          Categoria
+        .panel-body
+          = form_for(categorium) do |f|
+            .form-group
+              %label Nombre
+              = f.text_field :nombre, class: "form-control", placeholder: "Introduzca el nombre"
+            .form-group
+              %label Descripcion
+              = f.text_field :descripcion, class: "form-control", placeholder: "Introduzca la descripcion"
+            %div
+              = link_to "Cancel", categoria_path, class: "btn btn-white","data-dismiss"=>"modal"
+              = f.submit "Guardar", class: "btn btn-primary pull-right m-t-n-xs"

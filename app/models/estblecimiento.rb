@@ -1,2 +1,0 @@
-class Estblecimiento < ApplicationRecord
-end

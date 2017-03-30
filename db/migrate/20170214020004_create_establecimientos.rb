@@ -8,7 +8,7 @@ class CreateEstablecimientos < ActiveRecord::Migration[5.0]
       t.float :latitud
       t.float :longitud
       t.string :imagen
-      t.integer :idcategoria
+      t.integer :categoria_id
 
       t.timestamps
     end

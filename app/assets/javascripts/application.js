@@ -38,9 +38,8 @@
 //= require plugins/sparkline/jquery.sparkline.min
 
 //= require demo/sparkline-demo
-
+//= require fileinput.min.js
 //= require plugins/chartJs/Chart.min
 
-//= require plugins/toastr/toastr.min
 
 

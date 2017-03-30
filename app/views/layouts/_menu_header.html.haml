@@ -5,10 +5,10 @@
         %i.fa.fa-bars
       %form.navbar-form-custom{:action => "search_results.html", :role => "search"}
         .form-group
-          %input#top-search.form-control{:name => "top-search", :placeholder => "Search for something...", :type => "text"}/
+          %input#top-search.form-control{:name => "top-search", :placeholder => "Buscar...", :type => "text"}/
     %ul.nav.navbar-top-links.navbar-right
       %li
-        %span.m-r-sm.text-muted.welcome-message Welcome to INSPINIA+ Admin Theme.
+        %span.m-r-sm.text-muted.welcome-message Bienvenido.
       %li.dropdown
         %a.dropdown-toggle.count-info{"data-toggle" => "dropdown", :href => "#"}
           %i.fa.fa-envelope
@@ -93,6 +93,3 @@
         %a{:href => "#{destroy_user_session_path}", "data-method" => :delete}
           %i.fa.fa-sign-out
           Salir
-      %li
-        %a.right-sidebar-toggle
-          %i.fa.fa-tasks

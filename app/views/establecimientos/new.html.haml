@@ -1,4 +1,12 @@
-%h1
-  Nuevo Establecimiento
+.row.not-margin
+  .col-lg-12.wrapper.border-bottom.white-bg.page-heading
+    %h2 Nuevo establecimiento
+    %ol.breadcrumb
+      %li
+        %a{:href => "#{root_path}"} Inicio
+      %li
+        Establecimiento
+      %li.active
+        %strong Nuevo establecimiento
 
 = render 'form', establecimiento: @establecimiento

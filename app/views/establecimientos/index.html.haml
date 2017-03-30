@@ -29,7 +29,6 @@
               %th Información
               %th Latitud
               %th Longitud
-              %th Imagen
               %th Categoría
               %th Acción
           %tbody
@@ -43,8 +42,8 @@
                 %td= establecimiento.informacion
                 %td= establecimiento.latitud
                 %td= establecimiento.longitud
-                %td= establecimiento.imagen
-                %td= establecimiento.idcategoria
+                %td= establecimiento.categorium.try(:nombre)
+
 
                 %td
                   = link_to establecimiento do

@@ -61,6 +61,8 @@ gem 'youtube_it'
 gem "paperclip", "~> 5.0.0"
 
 
+#gem for rest api
+gem "grape",'0.18.0'
 
 #for encrypt
 gem 'bcrypt-ruby', :require => 'bcrypt'

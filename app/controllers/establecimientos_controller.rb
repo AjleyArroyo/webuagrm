@@ -29,7 +29,7 @@ class EstablecimientosController < ApplicationController
 
     respond_to do |format|
       if @establecimiento.save
-        format.html { redirect_to @establecimiento, notice: 'Establecimiento was successfully created.' }
+        format.html { redirect_to establecimientos_path, notice: 'Establecimiento was successfully created.' }
         format.json { render :show, status: :created, location: @establecimiento }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class EstablecimientosController < ApplicationController
   def update
     respond_to do |format|
       if @establecimiento.update(establecimiento_params)
-        format.html { redirect_to @establecimiento, notice: 'Establecimiento was successfully updated.' }
+        format.html { redirect_to establecimientos_path, notice: 'Establecimiento was successfully updated.' }
         format.json { render :show, status: :ok, location: @establecimiento }
       else
         format.html { render :edit }
@@ -70,6 +70,6 @@ class EstablecimientosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def establecimiento_params
-      params.require(:establecimiento).permit(:nombre, :numeracion, :alias, :informacion, :latitud, :longitud, :imagen, :idcategoria)
+      params.require(:establecimiento).permit(:nombre, :numeracion, :alias, :informacion, :latitud, :longitud, :imagen, :categorium_id,:avatar)
     end
 end

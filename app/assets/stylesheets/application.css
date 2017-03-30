@@ -18,6 +18,7 @@
  *= require animate
  *= require style
  *= require my_stile
+ *= require fileinput.css
 
 
  *= require_self

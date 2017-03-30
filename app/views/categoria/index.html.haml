@@ -18,7 +18,8 @@
       .ibox-content
         %div
           %span.input-group-btn
-            %a.btn.btn-sm.btn-primary{:href => "#{new_categorium_path}"} Crear
+            = link_to "Create", new_categorium_path, remote: true, class: "btn btn-primary"
+
         %table.table.table-hover
           %thead
             %tr
@@ -36,7 +37,7 @@
                 %td
                   = link_to categorium do
                     %i.fa.fa-eye.text-navy
-                  %a{:href => "#{edit_categorium_path(categorium)}"}
+                  = link_to edit_categorium_path(categorium), remote: true do
                     %i.fa.fa-edit.text-navy
                   = link_to categorium, method: :delete, data: { confirm: 'Are you sure?' } do
                     %i.fa.fa-trash.text-navy
